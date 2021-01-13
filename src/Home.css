@@ -12,6 +12,21 @@
     margin-bottom: -250px;
 }
 
+
+.arrows{
+    height: 100px;
+    width: 50px;
+    border: none;   
+    background-color: transparent;
+}
+
+.itemcarouseltitle{
+    font-size: 25px;
+    float: left;
+    margin: 10px;
+}
+
+
 @media screen and (max-width: 1000px){
    .carousel{
     margin-bottom: -100px !important;
@@ -28,10 +43,16 @@
 }
 
 .itemcarousel{
-    padding: 20px;
+    margin: 20px;
+    margin-top:10px;
+    padding: 10px;
+    background: white;
 }
 
 .cards{
     padding: 50px;
 }
 
+.Carousel{
+    display: flex;
+}

@@ -4,6 +4,8 @@ import Carousel from 'react-bootstrap/Carousel'
 import Product from './Product'
 import ItemsCarousel from 'react-items-carousel'
 import carouselItems from './data'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
 function Home() {
@@ -69,13 +71,14 @@ function Home() {
                 </div>
             </div>
             <div className="itemcarousel">
+                <strong className="itemcarouseltitle">Top picks for you</strong>
                 <ItemsCarousel className="Carousel"
                     requestToChangeActive={setActiveItemIndex}
                     activeItemIndex={activeItemIndex}
                     numberOfCards={numberofCards}
                     gutter={20}
-                    leftChevron={<button>{'<'}</button>}
-                    rightChevron={<button>{'>'}</button>}
+                    leftChevron={<button className="arrows"><ArrowBackIosIcon className="arrowicon"/></button>}
+                    rightChevron={<button className="arrows"><ArrowForwardIosIcon className="arrowicon"/></button>}
                     chevronWidth={chevronWidth}
                 >
                     {carouselItems.map((item) => {
