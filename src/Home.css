@@ -1,3 +1,5 @@
+
+
 .home_image{
     width: 100%;
     z-index: -1;
@@ -9,3 +11,27 @@
 .carousel{
     margin-bottom: -250px;
 }
+
+@media screen and (max-width: 1000px){
+   .carousel{
+    margin-bottom: -100px !important;
+} 
+}
+
+.home_row{
+    margin-right: 10px;
+    margin-left:10px;
+    display: flex;
+    flex: 1;
+    width:100%;
+    z-index:1;
+}
+
+.itemcarousel{
+    padding: 20px;
+}
+
+.cards{
+    padding: 50px;
+}
+
