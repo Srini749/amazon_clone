@@ -15,7 +15,7 @@ function Product(props) {
                 <Card.Text>⭐⭐⭐⭐⭐</Card.Text>
             </Card.Body>
             <Card.Img className="product_image" src={props.url}/>
-             <Button className="addbutton" variant="warning">Add to cart</Button>
+             <Button className="addbutton" variant="warning"><strong>Add to cart</strong></Button>
         </Card>
     )
 }
