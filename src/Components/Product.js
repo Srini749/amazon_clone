@@ -1,5 +1,5 @@
 import React from 'react'
-import './Product.css'
+import '../css/Product.css'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './Home.css'
+import '../css/Home.css'
 import Carousel from 'react-bootstrap/Carousel'  
 import Product from './Product'
 import ItemsCarousel from 'react-items-carousel'

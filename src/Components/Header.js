@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './Header.css'
+import '../css/Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
@@ -8,7 +8,7 @@ function Header() {
 
     return (
         <div>
-            <div className="header">
+            <div className="header" id="top">
                 <img className="header_logo"
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 />
@@ -44,7 +44,7 @@ function Header() {
             <div className="navbar navbar-dark">
                 <Navbar className="navbaritems" collapseOnSelect expand="lg" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/> 
-                <Navbar.Brand className="navbartitles" href="/">All</Navbar.Brand>
+                <Navbar.Brand className="navbarmaintitle" href="/">All</Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                     <Nav.Link className="navbartitles" href="#features">Fresh</Nav.Link>
