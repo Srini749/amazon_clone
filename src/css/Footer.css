@@ -10,7 +10,7 @@
     background-color: #37475A;
 }
 
-.part1 a{
+.part1{
     color: white !important;
     width: 100%
 }
@@ -24,17 +24,18 @@
 
 .part2{
     padding-top: 40px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 90px;
+    padding-right: 90px;
     width: 100%;
     background-color:#232F3E;
     margin: 0px !important;
 }
 
 .listitems p{
-    line-height: 10px !important;
+    line-height: 14px !important;
     text-align: left !important;
     color: white !important;
+    font-size: 2.5vh;
 }
 
 
@@ -43,18 +44,24 @@
 }
 
 .listitems strong p{
-    font-size: 20px !important;   
-    padding-bottom: 10px 
+    font-size: 3vh !important;   
+    padding-bottom: 20px 
 }
 
 .part3{
     display: flex;
     vertical-align: middle;
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-right: 150px;
+    padding-left: 150px;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #131A22;
+    width: 100%;
+}
+
+.row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
 }
 
 .part3items{

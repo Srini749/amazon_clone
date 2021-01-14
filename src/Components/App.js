@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header /> 
+        <Header className="header"/> 
             <Switch>
               <Route path="/checkout">
                   <Checkout />
@@ -18,7 +18,7 @@ function App() {
                   <Home />  
               </Route>
             </Switch>
-          <Footer />
+          <Footer className="footer"/>
       </div>
     </Router>
   );

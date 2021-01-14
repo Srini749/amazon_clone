@@ -1,17 +1,22 @@
 import React, {useState} from 'react'
 import '../css/Header.css'
 import SearchIcon from '@material-ui/icons/Search';
+import {Link} from 'react-router-dom';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
+import {useStateValue} from '../StateProvider'
 
 function Header() {
+    const [state, dispatch] = useStateValue();
 
     return (
         <div>
             <div className="header" id="top">
+                <Link to="/" className="header_home_logo">
                 <img className="header_logo"
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 />
+                </Link>
 
                 <div className="header_search">
                     <input className="header_search_input" type="text"  />
@@ -33,10 +38,12 @@ function Header() {
                         <span className="header_option_1">Your</span>
                         <span className="header_option_2"> Prime</span> 
                     </div>
+                    <Link to="/checkout" className="checkout_cart_header_option">
                     <div className="header_option_basket">
                         <ShoppingBasketIcon />
-                        <span className="header_option_2 basket_count">0</span>
-                    </div>    
+                        <span className="header_option_2 basket_count">{state.basket.length}</span>
+                    </div>  
+                    </Link>  
                 </div>
                     
 

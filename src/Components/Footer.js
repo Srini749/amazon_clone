@@ -1,13 +1,16 @@
 import React from 'react'
 import '../css/Footer.css'
+import {Link} from 'react-router-dom';
 
 
 function Footer() {
     return (
         <div className="container">
+            <a href="#top">
             <div className="part1" >
-                <a href="#top">Back to top</a>
+                Back to top
             </div>
+            </a>
             <div className="part2 row">
                 <div class="col-lg-3 col-md-6 col-sm-6 listitems">
                     <strong><p>Get to Know Us</p></strong>
@@ -39,17 +42,17 @@ function Footer() {
                     <p>Amazon App Download</p>
                 </div>
             </div>
-            <div className="part3">
-                <div class="col-lg-3 col-md-6 col-sm-6 part3items">
+            <div className="part3 row">
+                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
                     Conditions of Use & Sale
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 part3items">
+                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
                     Privacy Notice
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 part3items">
+                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
                     Interest-Based Ads
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 part3items">
+                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
                     © 1996-2020, Amazon.com, Inc. or its affiliates
                 </div>
             </div>

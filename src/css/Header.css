@@ -1,3 +1,28 @@
+@media screen and (max-width: 800px){
+    .navbaritemimg{
+        width: 50vh !important;
+    }
+    .header_logo{
+        width: 80px !important;
+    }
+    .header_option_1{
+        font-size: 10px !important;
+    }
+
+    .header_option_2{
+        font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+    .header_option{
+        padding: 0px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+
+    }
+
+
+}
+
 .header{
     height: 70px;
     display: flex;
@@ -9,9 +34,20 @@
 }
 
 .header_logo{
-    width: 100px;
+    width: 130px;
     object-fit: contain;
+    padding: 5px !important;
     margin: 20px 20px 0 20px;
+}
+.header_home_logo{
+    margin-bottom: 12px;
+}
+
+.header_logo:hover{
+    border: 2px solid !important;
+    border-color: white !important;
+    padding: 5px !important;
+    border-radius: 3px;
 }
 
 .header_search{
@@ -35,7 +71,6 @@
 
 .header_search_icon{
     background-color: #F3A847;
-    
 }
 
 .icon{
@@ -52,23 +87,47 @@
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
+    padding: 10px !important;
     color: white;
 }
 
 .header_option_1{
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .header_option_2{
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 800;
 }
 
 .header_option_basket{
     display: flex;
-    align-items: center;
+   align-items: center;
+    padding: 5px !important;
+    margin-top: 10px;
     color: white;
 }
+
+.checkout_cart_header_option:hover{
+    text-decoration: none;
+}
+
+
+.header_option:hover {
+    border: 2px solid !important;
+    border-color: white !important;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.header_option_basket:hover{
+    border: 2px solid !important;
+    border-color: white !important;
+    color: #F3A847;
+    border-radius: 3px;
+}
+
+
+
 
 .basket_count{
     margin-left: 10px;
@@ -85,6 +144,7 @@
     display: flex;
     align-items: center;
     padding: 0px 10px !important;
+    position: sticky;
     
 }
 
@@ -157,6 +217,7 @@
 
 .navbaritemimg{
     margin-left:0px;
-    
 }
+
+
 
