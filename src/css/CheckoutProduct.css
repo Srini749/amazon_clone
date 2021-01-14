@@ -42,3 +42,15 @@
     float: left;
     background-color: #F3A847 !important;
 }
+.dropdowntitle{
+    background-color : #E3E6E6 !important;
+    border: none !important;
+    color: black !important;
+
+}
+
+
+.dropdownmenu{
+    color: black !important;
+    background-color: white !important;
+}

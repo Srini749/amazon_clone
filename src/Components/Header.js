@@ -5,12 +5,25 @@ import {Link} from 'react-router-dom';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
 import {useStateValue} from '../StateProvider'
+import SideBar from "./Sidebar";
+
 
 function Header() {
     const [state, dispatch] = useStateValue();
+    const [opensidebar, setSidebar] = useState(false);
+
+    function openSidebar(){
+        setSidebar(true);
+    }
+    function closeSidebar(){
+        setSidebar(false);
+    }
+
+
 
     return (
-        <div>
+        <div id="App">
+            <SideBar pageWrapId={"App"} outerContainerId={"App"} isOpen={opensidebar} onClose={closeSidebar}/>
             <div className="header" id="top">
                 <Link to="/" className="header_home_logo">
                 <img className="header_logo"
@@ -51,7 +64,7 @@ function Header() {
             <div className="navbar navbar-dark">
                 <Navbar className="navbaritems" collapseOnSelect expand="lg" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/> 
-                <Navbar.Brand className="navbarmaintitle" href="/">All</Navbar.Brand>
+                <Navbar.Brand className="navbarmaintitle" onClick={openSidebar}>All</Navbar.Brand>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                     <Nav.Link className="navbartitles" href="#features">Fresh</Nav.Link>

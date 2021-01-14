@@ -1,10 +1,17 @@
-import React from 'react'
+import {React, useState} from 'react'
 import '../css/CheckoutProduct.css'
 import Button from 'react-bootstrap/Button'
 import {useStateValue} from '../StateProvider'
 
+
 function CheckoutProduct(props) {
     const [state, dispatch] = useStateValue();
+    const [qty, setQty] = useState(1);
+
+    const handleSelect=(e)=>{
+    setQty(e);
+  }
+
     function removeitem(){
         dispatch({
             type: "Remove_from_basket",
