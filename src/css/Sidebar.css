@@ -1,132 +1,23 @@
-/* Position and sizing of burger button */
-.bm-burger-button {
-  position: fixed;
-  width: 1px;
-  height: 1px;
-  left: 36px;
-  top: 36px;
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: transparent;
-}
-
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: transparent;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #bdc3c7;
-}
-
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
+.sidebar-header{
+  background: #232F3E !important;
+  color: white !important;
 }
 
 
-.menu-header{
-  color: white;
-  background: #232F3E;
-  padding: 10px;
-  position: sticky;
-  font-size: 22px;
+.first-back-btn {
+    color: white !important;
+    background-color:  #232F3E !important;
+    text-align: left !important;
 }
 
-.menu-header:hover{
-  text-decoration: none;
-  color: grey !important;
+svg{
+  margin-right: 5px;
 }
 
-
-
-/* General sidebar styles */
-.bm-menu {
-  background: white;
-  justify-content: flex-start;
-  text-align: left;
-  font-size: 1.15em;
+.sidebar-main-content ul{
+  font-size: 15px;
 }
 
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-}
-
-/* Individual item */
-.bm-item {
-  display: inline-block;
-}
-
-
-.menu-title{
+.section-heading{
   font-size: 20px;
-  color: black; 
-  font-weight: 600;
-  padding: 10px;
-}
-
-.menu-title:hover{
-  text-decoration: none;
-  color: grey !important;
-
-}
-
-:focus {
-    outline: -webkit-focus-ring-color auto 0px;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.menu-primary-enter {
-  position: absolute;
-  transform: translateX(-110%);
-}
-.menu-primary-enter-active {
-  transform: translateX(0%);
-  transition: all var(--speed) ease;
-}
-.menu-primary-exit {
-  position: absolute;
-}
-.menu-primary-exit-active {
-  transform: translateX(-110%);
-  transition: all var(--speed) ease;
-}
-
-
-.menu-secondary-enter {
-  transform: translateX(110%);
-}
-.menu-secondary-enter-active {
-  transform: translateX(0%);
-  transition: all var(--speed) ease;
-}
-.menu-secondary-exit {
-
-}
-.menu-secondary-exit-active {
-  transform: translateX(110%);
-  transition: all var(--speed) ease;
 }
