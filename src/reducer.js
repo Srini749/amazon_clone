@@ -1,6 +1,7 @@
 export const initialState={
     basket: [],
     total: 0,
+    sidebar: false,
 };
 
 
@@ -17,6 +18,16 @@ const reducer = (state, action) => {
          ...state,
          basket: state.basket.filter(item => item.title !== action.item.title),
          total: parseFloat(state.total) - parseFloat(action.item.price),
+     };
+     case "openSidebar" :
+     return {
+       ...state,
+       sidebar: true,
+     };
+     case "closeSidebar" :
+     return {
+       ...state,
+       sidebar: false,
      };
     default:
       return state;

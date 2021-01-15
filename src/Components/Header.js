@@ -6,24 +6,32 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
 import {useStateValue} from '../StateProvider'
 import SideBar from "./Sidebar";
+import { slide as Menu } from "react-burger-menu";
 
 
 function Header() {
     const [state, dispatch] = useStateValue();
-    const [opensidebar, setSidebar] = useState(false);
+    const [opensidebar, setSidebar] = useState({state: false});
 
-    function openSidebar(){
-        setSidebar(true);
+    function handleSidebarToggle () {
+    if(opensidebar.state === true){
+      setSidebar({state: false });
+    }else{
+      setSidebar({state: true });
     }
-    function closeSidebar(){
-        setSidebar(false);
-    }
+  };
 
+     function openSidebar(){
+        dispatch({
+            type: "openSidebar",
+        })
+    }
 
 
     return (
         <div id="App">
-            <SideBar pageWrapId={"App"} outerContainerId={"App"} isOpen={opensidebar} onClose={closeSidebar}/>
+
+            <SideBar open={state.sidebar} />
             <div className="header" id="top">
                 <Link to="/" className="header_home_logo">
                 <img className="header_logo"

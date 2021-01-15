@@ -37,10 +37,27 @@ Note: Beware of modifying this element as it can break the animations - you shou
   height: 100%;
 }
 
+
+.menu-header{
+  color: white;
+  background: #232F3E;
+  padding: 10px;
+  position: sticky;
+  font-size: 22px;
+}
+
+.menu-header:hover{
+  text-decoration: none;
+  color: grey !important;
+}
+
+
+
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
+  background: white;
+  justify-content: flex-start;
+  text-align: left;
   font-size: 1.15em;
 }
 
@@ -52,7 +69,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
 }
 
 /* Individual item */
@@ -60,7 +76,57 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: inline-block;
 }
 
+
+.menu-title{
+  font-size: 20px;
+  color: black; 
+  font-weight: 600;
+  padding: 10px;
+}
+
+.menu-title:hover{
+  text-decoration: none;
+  color: grey !important;
+
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-secondary-exit {
+
+}
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
 }
