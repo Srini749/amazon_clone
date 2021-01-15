@@ -10,8 +10,13 @@
     text-align: left !important;
 }
 
-svg{
-  margin-right: 5px;
+#Capa_1{
+  margin-right: 10px;
+  background: white;
+  padding: 2px;
+  width: 15px;
+  border-radius: 5px;
+  height: 15px;
 }
 
 .sidebar-main-content ul{
