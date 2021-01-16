@@ -3,6 +3,8 @@ import MultilevelSidebar from "react-multilevel-sidebar";
 import {useStateValue} from '../StateProvider'
 import '../css/Sidebar.css'
 import "react-multilevel-sidebar/src/Sidebar.css";
+import { auth } from "./firebase.js";
+
 
 function Sidebar(props) {
   const [state, dispatch] = useStateValue();
@@ -21,10 +23,16 @@ function Sidebar(props) {
     }
   };
 
+  function handleClick(itemOptions) {
+    if(itemOptions.name == "SignOut"){
+      auth.signOut();
+    }
+  };
+
   let options = [
   {
     title: "Trending",
-    content: [{ id: 1, name: "Best Sellers", to: "/" },{ id: 1, name: "New Releases", to: "/" },{ id: 1, name: "Movers and Shakers", to: "/" }]
+    content: [{ id: 1, name: "Best Sellers",  },{ id: 1, name: "New Releases", to: "/" },{ id: 1, name: "Movers and Shakers", to: "/" }]
   },
   {
     title: "Shop by Department",
@@ -183,7 +191,7 @@ function Sidebar(props) {
         name: "Women's Fashion",
         children: [
           {
-            title: "Womeen's Clothing",
+            title: "Women's Clothing",
             content: [
               {
                 id: 3,
@@ -249,6 +257,7 @@ function Sidebar(props) {
           onToggle={handleSidebarToggle}
           options={options}
           header="Home"
+          onItemClick={handleClick}
         />        
     </div>
   )

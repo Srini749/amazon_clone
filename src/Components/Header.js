@@ -7,6 +7,8 @@ import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap'
 import {useStateValue} from '../StateProvider'
 import SideBar from "./Sidebar";
 import { slide as Menu } from "react-burger-menu";
+import { auth } from "./firebase.js";
+
 
 
 function Header() {
@@ -21,12 +23,17 @@ function Header() {
     }
   };
 
-     function openSidebar(){
+    function openSidebar(){
         dispatch({
             type: "openSidebar",
         })
     }
-
+    
+    function handleSignOut(){
+        if(state.user){
+            auth.signOut();
+        }
+    }
 
     return (
         <div id="App">
@@ -48,9 +55,9 @@ function Header() {
 
                 <div className="header_nav">
                     <Link to="/login">
-                    <div className="header_option">
-                        <span className="header_option_1">Hello Guest</span>
-                        <span className="header_option_2">Sign In</span>              
+                    <div onClick={handleSignOut}className="header_option">
+                        <span className="header_option_1">Hello {state.user!=null ? state.user.email.substring(0,3).toUpperCase() : "Guest"}</span>
+                        <span className="header_option_2">{state.user!=null ? "Sign Out" : "Sign In"}</span>              
                     </div>
                     </Link>
                     <div className="header_option">

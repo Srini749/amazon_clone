@@ -43,16 +43,16 @@ function Footer() {
                 </div>
             </div>
             <div className="part3 row">
-                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
+                <div class="col-lg-3 col-md-3 col-sm-12 part3items">
                     Conditions of Use & Sale
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
+                <div class="col-lg-3 col-md-3 col-sm-12 part3items">
                     Privacy Notice
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
+                <div class="col-lg-3 col-md-3 col-sm-12 part3items">
                     Interest-Based Ads
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 part3items">
+                <div class="col-lg-3 col-md-3 col-sm-12 part3items">
                     © 1996-2020, Amazon.com, Inc. or its affiliates
                 </div>
             </div>
