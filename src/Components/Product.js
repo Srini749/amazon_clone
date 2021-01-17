@@ -6,6 +6,7 @@ import {useStateValue} from '../StateProvider'
 import {Link} from 'react-router-dom';
 
 
+
 function Product(props) {
     const [state, dispatch] = useStateValue()
     var added;
@@ -31,17 +32,18 @@ function Product(props) {
 
    
     return (
-        <Link to= {{
-            pathname: '/details/:' + props.title.substring(0,15),
-            state: {
-                title: props.title,
-                url: props.url,
-                price: props.price,
-                details: props.details,
-                images: props.images
-            }
-        }}>
+        
         <Card className="product">
+            <Link to= {{
+                    pathname: '/details/:' + props.title.substring(0,15),
+                    state: {
+                        title: props.title,
+                        url: props.url,
+                        price: props.price,
+                        details: props.details,
+                        images: props.images
+                    }
+                }}>
             <Card.Body className="product_info">
                 <Card.Title><p>{props.title}</p></Card.Title>
                 <Card.Text className="product_price">
@@ -50,10 +52,10 @@ function Product(props) {
                 </Card.Text>
                 <Card.Text>⭐⭐⭐⭐⭐</Card.Text>
             </Card.Body>
+            </Link>
             <Card.Img className="product_image" src={props.url}/>
             <Button onClick={addtoBasket}className="addbutton" variant="warning"><strong>{added}</strong></Button>
         </Card>
-        </Link>
     )
 }
 

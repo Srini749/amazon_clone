@@ -1,3 +1,20 @@
+@media screen and (max-width: 1000px){
+    .detailsContainer{
+    display: flex;
+    flex-direction: column !important;
+}
+
+    .imageBig{
+        height: 300px;
+    }
+}
+
+
+.imageContainer{
+    display: flex;
+    flex-direction: row !important;
+    }
+
 .detailsContainer{
     display: flex;
     flex-direction: row;
@@ -31,7 +48,7 @@
 }
 
 .imageSmall{
-    height: 60px;
+    height: 70px;
     object-fit: contain;
     padding: 10px;
     margin: 10px;
@@ -72,8 +89,13 @@
     
 }
 
-.icon span{
+.iconItem span{
     font-size:13px;
+    text-align: center
+}
+
+.iconItem:hover{
+    text-decoration: underline;
 }
 
 .productInfo p{
@@ -92,4 +114,70 @@
 .info ul{
     padding: 0px;
     margin-left: 20px;
+}
+
+.addtoCart{
+    justify-content: center;
+    padding: 10px 30px;
+    margin: 20px 40px;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: grey;
+    height: max-content;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: max-content;
+    margin-left: 10px !important;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+
+
+.dropdownmenu{
+    margin-right: 0px !important;
+    background-color: white !important;
+    padding: 0px !important;
+}
+
+.addtoCart input{
+    margin-bottom: 10px;
+}
+
+small{
+    display: flex;
+    justify-content: flex-start !important;
+    margin: 0px;
+    width: max-content;
+}
+
+.dropdownmenu button{
+    background-color: white !important;
+    color: black !important;
+}
+ 
+.dropdown-toggle:focus {
+    box-shadow: none !important;
+}
+
+.btn-primary{
+    border-color: grey !important;
+}
+
+.dropdownItem{
+    background-color: white !important;
+}
+
+.dropdown span{
+    padding-right: 10px;
+}
+
+.cartBtn{
+    background-color: #F3A847 !important;
+    width: 100%;
+    margin-bottom: 10px;
 }

@@ -2,38 +2,15 @@ import React, {useState} from 'react'
 import '../css/Home.css'
 import Carousel from 'react-bootstrap/Carousel'  
 import Product from './Product'
-import ItemsCarousel from 'react-items-carousel'
+import ItemCarousel from './ItemCarousel'
 import carouselItems from '../Data/data'
 import sampleImages from '../Data/sampleImages'
 import sampleDetails from '../Data/sampleDetails'
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+
 
 function Home() {
 
     
-
-    const [activeItemIndex, setActiveItemIndex] = useState(0);
-    const [numberofCards, setNumberOfCards] = useState(3);
-    const chevronWidth = 40;
-    function myFunction(x) {
-        if (x.matches) {
-          setNumberOfCards(2);  
-           
-        } else {
-            if(y.matches){
-                setNumberOfCards(1);
-            }else{
-                setNumberOfCards(3);
-            }
-            
-        }
-    }
-
-    var x = window.matchMedia("(max-width: 1000px) and (min-width:600px)") 
-    var y = window.matchMedia("(max-width: 600px)") 
-    console.log(x)
-    x.addListener(myFunction)
 
     return (
         <div className="home">
@@ -75,23 +52,7 @@ function Home() {
                 </div>
             </div>
             <div className="itemcarousel">
-                <strong className="itemcarouseltitle">Top picks for you</strong>
-                <ItemsCarousel className="Carousel"
-                    requestToChangeActive={setActiveItemIndex}
-                    activeItemIndex={activeItemIndex}
-                    numberOfCards={numberofCards}
-                    gutter={20}
-                    leftChevron={<button className="arrows"><ArrowBackIosIcon className="arrowicon"/></button>}
-                    rightChevron={<button className="arrows"><ArrowForwardIosIcon className="arrowicon"/></button>}
-                    chevronWidth={chevronWidth}
-                >
-                    {carouselItems.map((item) => {
-                        return <div>
-                            <Product title={item.title} url={item.url} price={item.price} />
-                        </div>
-                    })}
-
-                </ItemsCarousel>
+                <ItemCarousel title="Top picks for you" items={carouselItems}/>
             </div>
         </div>
     )

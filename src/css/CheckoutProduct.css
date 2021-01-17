@@ -9,17 +9,20 @@
     flex-direction: row;
     margin-top: 30px;
     margin-bottom: 30px;
+    
     align-items: center;
 }
 
 .checkoutproductimgbox{
-    width: 200px;
     margin: 60px;
+    height: 250px;
+    width: 250px;
 }
 
 .checkoutproductimg{
     object-fit: contain;
     width: 100%;
+    height: 100%;
 }
 
 .checkoutproductinfo{

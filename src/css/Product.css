@@ -51,6 +51,10 @@ a:hover{
     z-index: 1;
 }
 
+.product:hover{
+    box-shadow: 2px 2px 5px black;
+}
+
 .card{
     border: none!important;
 }
