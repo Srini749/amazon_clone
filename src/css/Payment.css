@@ -1,0 +1,39 @@
+@media screen and (max-width: 1000px){
+    .payment_section{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+.payment{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.payment_container > h1 {
+    padding: 20px;
+    font-weight: 400;
+    background-color: rgb(234, 237, 237);
+    border-bottom: 1px solid lightgray;
+    text-align: left;
+    color: gray;
+  }
+
+  .payment_section {
+    display: flex;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.payment_title {
+    flex: 0.2;
+    text-align: left;
+}
+
+.payment_address, .payment_items, .payment_details {
+    flex: 0.8;
+    text-align: left;
+}
