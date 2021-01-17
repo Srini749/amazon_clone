@@ -17,6 +17,7 @@
     margin: 60px;
     height: 250px;
     width: 250px;
+    flex: 0.4;
 }
 
 .checkoutproductimg{
@@ -28,6 +29,7 @@
 .checkoutproductinfo{
     display: flex;
     flex-direction: column;
+    flex: 0.6;
 }
 
 .checkoutproducttitle{

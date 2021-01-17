@@ -142,10 +142,14 @@
 .navbar{
     background-color: #232F3E;
     display: flex;
-    align-items: center;
+    align-items: center !important;
     padding: 0px 10px !important;
     position: sticky;
     
+}
+
+.navbar-nav{
+    align-items: center !important;
 }
 
 .navbarmaintitle{
@@ -166,8 +170,11 @@
     color: white !important;
     text-align: left !important;
     margin-bottom: 0px;
-    vertical-align: middle;
+    justify-content: center;
+    height: max-content;
+
 }
+
 
 .navbaritems{
     display: flex;

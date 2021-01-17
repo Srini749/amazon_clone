@@ -9,6 +9,7 @@ import {useStateValue} from '../StateProvider'
 import { auth } from "./firebase.js";
 import {useEffect} from 'react'
 import Details from './Details'
+import Payment from './Payment'
 
 
 function App() {
@@ -44,6 +45,11 @@ useEffect(() => {
                   <Footer className="footer"/>
                 </div>
               )}/>
+              <Route path="/payment">
+                <Header className="header"/>
+                <Payment />
+                <Footer className="footer"/>
+              </Route>
               <Route path="/login">
                   <Login />
               </Route>
