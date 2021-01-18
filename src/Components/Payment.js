@@ -2,17 +2,20 @@ import React,{ useState, useEffect } from 'react'
 import '../css/Payment.css'
 import {useStateValue} from '../StateProvider'
 import CheckoutProduct from './CheckoutProduct'
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
+import axios from './axios'
+import { Link, useHistory } from "react-router-dom"
 
 
 function Payment() {
     const stripe = useStripe();
     const elements = useElements();
-    const [state, dispatch] = useStateValue();
+    const [{basket, total, user}, dispatch] = useStateValue();
     const [error, setError] = useState(null);
     const [processing, setProcessing] = useState("");
     const [disabled, setDisabled] = useState(true);
     const [clientSecret, setClientSecret] = useState(true);
+    const history = useHistory();   
 
 
     const handleChange = event => {
@@ -25,16 +28,34 @@ function Payment() {
             const response = await axios({
                 method: 'post',
                 // Stripe expects the total in a currencies subunits
-                url: `/payments/create?total=${state.total * 100}`
+                url: `/payments/create?total=${total*100}`
             });
             setClientSecret(response.data.clientSecret)
+            console.log(response.data.clientSecret)
         }
 
         getClientSecret();
-    }, [state.basket])
+    }, [basket])
 
     const handleSubmit = async (event) => {
-        setProcessing(true);    
+        event.preventDefault(); 
+        setProcessing(true); 
+         const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: elements.getElement(CardElement)
+            }
+        }).then(({ paymentIntent }) => {
+            // paymentIntent = payment confirmation
+
+            setError(null)
+            setProcessing(false)
+
+            dispatch({
+                type: 'EMPTY_BASKET'
+            })
+
+            history.replace('/orders')
+        })
     }
 
     return (
@@ -42,14 +63,14 @@ function Payment() {
             <div className="payment_container">
                 <h1>
                     Checkout (
-                        {state.basket.length} items)
+                        {basket.length} items)
                 </h1>
                 <div className='payment_section'>
                     <div className='payment_title'>
                         <h5><strong>Delivery Address</strong></h5>
                     </div>
                     <div className='payment_address'>
-                        <p>{state.user?.email}</p>
+                        <p>{user?.email}</p>
                         <p>123 React Lane</p>
                         <p>Los Angeles, CA</p>
                     </div>
@@ -60,7 +81,7 @@ function Payment() {
                         <h5><strong>Review items and delivery</strong></h5>
                     </div>
                     <div className='payment_items'>
-                        {state.basket.map(item => (
+                        {basket.map(item => (
                             <CheckoutProduct
                                 title={item.title}
                                 url={item.url}
@@ -79,7 +100,7 @@ function Payment() {
                         <form onSubmit={handleSubmit}>                           
                             <CardElement onChange={handleChange}>
                             </CardElement>
-                            <strong>Order: ${state.total.toFixed(2)}</strong>
+                            <strong>Order: ${total.toFixed(2)}</strong>
                             <button disabled={processing || disabled}>
                                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                             </button>
