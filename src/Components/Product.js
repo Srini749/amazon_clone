@@ -54,7 +54,7 @@ function Product(props) {
             </Card.Body>
             </Link>
             <Card.Img className="product_image" src={props.url}/>
-            <Button onClick={addtoBasket}className="addbutton" variant="warning"><strong>{added}</strong></Button>
+            <button onClick={addtoBasket}className="addbutton" ><strong>{added}</strong></button>
         </Card>
     )
 }

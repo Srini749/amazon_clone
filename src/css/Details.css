@@ -177,7 +177,15 @@ small{
 }
 
 .cartBtn{
-    background-color: #F3A847 !important;
+    background-color: #f0c14b !important;
+    border: 1px solid !important;
+    border-color: #a88734 #9c7e31 #846a29 !important;
     width: 100%;
+    border-radius: 2px;
+    padding: 3px;
     margin-bottom: 10px;
+}
+
+.cartBtn:hover{
+    background-color: #EEBA36 !important;
 }

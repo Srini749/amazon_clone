@@ -48,7 +48,19 @@
     margin-left: 0px;
     margin-right: 40px;
     float: left;
-    background-color: #F3A847 !important;
+    padding: 5px;
+    background-color: #f0c14b ;
+    border: 1px solid !important;
+    border-color: #a88734 #9c7e31 #846a29 !important;
+    border-color: #a88734 #9c7e31 #846a29; 
+    color: #111;
+    border-radius: 2px; 
+
+
+}
+
+.removebtn:hover{
+    background-color: #EEBA36 !important;
 }
 .dropdowntitle{
     background-color : #E3E6E6 !important;

@@ -115,8 +115,8 @@ function Details(props) {
                                     <Dropdown.Item className="dropdownItem" eventKey="4+">4+</Dropdown.Item>
                             </DropdownButton>
                     </div>
-                    <Button onClick ={addtoBasket}className="cartBtn" variant="warning"><strong>{added}</strong></Button>
-                    <Button className="cartBtn" variant="warning"><strong>Buy Now</strong></Button>
+                    <button onClick ={addtoBasket}className="cartBtn" variant="warning"><strong>{added}</strong></button>
+                    <button className="cartBtn" variant="warning"><strong>Buy Now</strong></button>
                 </div>
             </div>
             <ItemCarousel title="Based on your searches" items={carouselItems}/>

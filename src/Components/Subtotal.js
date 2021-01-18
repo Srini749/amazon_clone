@@ -10,12 +10,12 @@ function Subtotal() {
     const [state, dispatch] = useStateValue();
     return (
         <div className="subtotalbox">
-            <p>Subtotal ({state.basket.length} items): <strong>$ {state.total}</strong></p>
+            <p>Subtotal ({state.basket.length} items): <strong>$ {state.total.toFixed(2)}</strong></p>
             <small className="subtotal_gift">
                 <input type="checkbox" /> This order contains a gift
             </small>
             
-            <Button onClick={e => history.push('/payment')} className="proceedtocart" variant="warning"><strong>Proceed to buy</strong></Button>
+            <button onClick={e => history.push('/payment')} className="proceedtocart"><strong>Proceed to buy</strong></button>
         </div>
     )
 }

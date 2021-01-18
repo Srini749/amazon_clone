@@ -34,7 +34,7 @@ function CheckoutProduct(props) {
                     <strong>$ {props.price}</strong>
                 </p>
                 <p>⭐⭐⭐⭐⭐</p>
-                <Button onClick={removeitem}className="removebtn" variant="warning"><strong>Remove from basket</strong></Button>
+                <button onClick={removeitem}className="removebtn" variant="warning"><strong>Remove from basket</strong></button>
             </div>
         </div>
     )

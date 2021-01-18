@@ -11,6 +11,13 @@
 }
 
 .proceedtocart{
-    background-color: #F3A847 !important;
-    size: 1.5vh;
+    background-color: #f0c14b !important;
+    border: 1px solid !important;
+    border-color: #a88734 #9c7e31 #846a29 !important;  
+    padding: 5px;
+    border-radius: 2px; 
+}
+
+.proceedtocart:hover{
+    background-color: #EEBA36 !important;
 }
