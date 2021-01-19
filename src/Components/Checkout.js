@@ -17,7 +17,7 @@ function Checkout() {
                 <FlipMove enterAnimation="fade" leaveAnimation="fade" >
                 {state.basket.map((item) => {
                    return <div>
-                        <CheckoutProduct title={item.title} url={item.url} price={item.price}/>
+                        <CheckoutProduct title={item.title} url={item.url} price={item.price} hidebutton="false"/>
                     </div>
                 })}
                 </FlipMove>

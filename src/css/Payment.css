@@ -53,3 +53,11 @@
 .payment_details button:hover{
     background: #EEBA36;
 }
+
+.payment_details{
+    max-width: 400px;
+}
+
+.cardelement{
+    margin:10px 10px 10px 0px;
+}

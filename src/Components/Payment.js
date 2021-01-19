@@ -96,7 +96,7 @@ function Payment() {
                                 title={item.title}
                                 url={item.url}
                                 price={item.price}
-                                rating={item.rating}
+                                hidebutton = "false"                                
                             />
                         ))}
                     </div>
@@ -108,7 +108,7 @@ function Payment() {
                     </div>
                     <div className="payment_details">
                         <form onSubmit={handleSubmit}>                           
-                            <CardElement onChange={handleChange} /> 
+                            <CardElement onChange={handleChange} className="cardelement"/> 
                             <strong>Order: ${total.toFixed(2)}</strong>
                             <button disabled={processing || disabled}>
                                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
