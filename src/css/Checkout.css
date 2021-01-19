@@ -29,6 +29,24 @@
     margin-right: 5px;
 }
 
+.noItems{
+    padding: 10px;
+    font-size: 18px;
+}
+
+.noItems button{
+     background-color: #f0c14b !important;
+    border: 1px solid !important;
+    border-color: #a88734 #9c7e31 #846a29 !important;  
+    padding: 5px 50px 5px 50px ;
+    border-radius: 2px; 
+}
+
+.noItems button:hover{
+    background-color: #EEBA36 !important;
+}
+
+
 @media screen and (max-width: 800px){
     .checkout{
         flex-direction: column;
