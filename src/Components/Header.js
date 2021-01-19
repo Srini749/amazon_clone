@@ -60,10 +60,12 @@ function Header() {
                         <span className="header_option_2">{state.user!=null ? "Sign Out" : "Sign In"}</span>              
                     </div>
                     </Link>
+                    <Link to="/orders">
                     <div className="header_option">
                         <span className="header_option_1">Returns</span>
                         <span className="header_option_2">& Orders</span> 
                     </div>
+                    </Link>
                     <div className="header_option">
                         <span className="header_option_1">Your</span>
                         <span className="header_option_2"> Prime</span> 

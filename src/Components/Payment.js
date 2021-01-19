@@ -5,6 +5,8 @@ import CheckoutProduct from './CheckoutProduct'
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import axios from './axios'
 import { Link, useHistory } from "react-router-dom"
+import { db } from "./firebase";
+
 
 
 function Payment() {
@@ -43,17 +45,25 @@ function Payment() {
          const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement)
-            }
+                }
         }).then(({ paymentIntent }) => {
             // paymentIntent = payment confirmation
-
-            setError(null)
-            setProcessing(false)
-
+             db
+              .collection('users')
+              .doc(user.uid)
+              .collection('orders')
+              .doc(paymentIntent.id)
+              .set({
+                  basket: basket,
+                  amount: paymentIntent.amount,
+                  created: paymentIntent.created,
+                  id: paymentIntent.id
+              })
             dispatch({
                 type: 'EMPTY_BASKET'
             })
-
+            setError(null)
+            setProcessing(false)
             history.replace('/orders')
         })
     }
@@ -98,8 +108,7 @@ function Payment() {
                     </div>
                     <div className="payment_details">
                         <form onSubmit={handleSubmit}>                           
-                            <CardElement onChange={handleChange}>
-                            </CardElement>
+                            <CardElement onChange={handleChange} /> 
                             <strong>Order: ${total.toFixed(2)}</strong>
                             <button disabled={processing || disabled}>
                                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
