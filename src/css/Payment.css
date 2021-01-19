@@ -38,6 +38,10 @@
     text-align: left;
 }
 
+.payment_address p{
+    margin-left: 15px;
+}
+
 .payment_details button{
     background: #f0c14b;
     border-radius: 2px;
@@ -61,3 +65,12 @@
 .cardelement{
     margin:10px 10px 10px 0px;
 }
+
+.MuiInputLabel-root.Mui-focused{
+    color: #F3A847 !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: #F3A847 !important;
+}
+

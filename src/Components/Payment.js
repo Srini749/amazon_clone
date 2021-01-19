@@ -6,6 +6,8 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import axios from './axios'
 import { Link, useHistory } from "react-router-dom"
 import { db } from "./firebase";
+import TextField from '@material-ui/core/TextField';
+
 
 
 
@@ -16,13 +18,19 @@ function Payment() {
     const [error, setError] = useState(null);
     const [processing, setProcessing] = useState("");
     const [disabled, setDisabled] = useState(true);
+    const [validator, setValidator] = useState(false);
     const [clientSecret, setClientSecret] = useState(true);
+    const [address, setAddress] = useState(null);
     const history = useHistory();   
 
 
     const handleChange = event => {
         setDisabled(event.empty);
         setError(event.error ? event.error.message : "");
+    }
+
+    const handleTextChange = event =>{
+        setAddress(event.target.value)
     }
 
     useEffect(() => {
@@ -40,7 +48,8 @@ function Payment() {
     }, [basket])
 
     const handleSubmit = async (event) => {
-        event.preventDefault(); 
+        if(address !=null){ 
+            event.preventDefault(); 
         setProcessing(true); 
          const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -57,7 +66,8 @@ function Payment() {
                   basket: basket,
                   amount: paymentIntent.amount,
                   created: paymentIntent.created,
-                  id: paymentIntent.id
+                  id: paymentIntent.id,
+                  address: address
               })
             dispatch({
                 type: 'EMPTY_BASKET'
@@ -65,7 +75,12 @@ function Payment() {
             setError(null)
             setProcessing(false)
             history.replace('/orders')
-        })
+        })            
+        }else{
+            event.preventDefault();
+            setValidator(true);
+        }
+        
     }
 
     return (
@@ -81,8 +96,21 @@ function Payment() {
                     </div>
                     <div className='payment_address'>
                         <p>{user?.email}</p>
-                        <p>123 React Lane</p>
-                        <p>Los Angeles, CA</p>
+                        <TextField
+                            
+                            id="filled-full-width"
+                            onChange={handleTextChange}
+                            label="Full Address"
+                            style={{ margin: 8 }}
+                            placeholder="Enter your address."
+                            helperText={validator ? "Field required.": null}
+                            fullWidth
+                            margin="normal"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            />
                     </div>
                 </div>
 

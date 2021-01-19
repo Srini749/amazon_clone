@@ -22,4 +22,40 @@
     text-align: left;
 }
 
+.order_date {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
 
+.order_address {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+}
+
+.order_address p{
+  margin: 5px;
+}
+
+.order_date p{
+  margin: 5px;
+}
+
+
+
+@media screen and (max-width: 1000px){
+      .order_date {
+          display: flex;
+          flex-direction: column;
+          font-size: 16px;
+        }
+        .order_address {
+          display: flex;
+          flex-direction: column;
+          font-size: 14px;
+        }
+    .order_total {
+    font-size: 20px;
+  }
+}

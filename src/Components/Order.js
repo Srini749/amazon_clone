@@ -6,8 +6,14 @@ import CheckoutProduct from "./CheckoutProduct";
 function Order(props) {
     return (
         <div className='order'>
-            <h2>Order</h2>
-            <p>{moment.unix(props.order.data.created).format("MMMM Do YYYY, h:mma")}</p>
+            <div className="order_date">
+                <p><strong>Order :</strong></p>
+                <p>{moment.unix(props.order.data.created).format("MMMM Do YYYY, h:mma")}</p>
+            </div>
+            <div className="order_address">
+                <p><strong>Delivery Address :</strong></p>
+                <p>{props.order.data.address}</p>
+            </div>
             <p className="order_id">
                 <small>{props.order.id}</small>
             </p>
